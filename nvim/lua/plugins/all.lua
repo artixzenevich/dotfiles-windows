@@ -22,6 +22,9 @@ return {
       return {}
     end,
   },
+  {
+    "kdheepak/lazygit.nvim",
+  },
 
   -- add more treesitter parsers
   {
@@ -52,6 +55,17 @@ return {
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       table.insert(opts.sources, { name = "emoji" })
+    end,
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    config = function()
+      require("neo-tree").setup({
+        window = {
+          position = "right",
+          width = 30,
+        },
+      })
     end,
   },
 }
